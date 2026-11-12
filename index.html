@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumora | Curated Goods, Delivered Beautifully</title>
+<meta name="description" content="Shop thoughtfully curated home, style and lifestyle products with free shipping, easy returns and personal shopping.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { sans: ['Inter','system-ui','sans-serif'], serif: ['Playfair Display','serif'] },
+      colors: { brand: { 50:'#fdf4ef', 100:'#fae5d6', 500:'#e8743b', 600:'#d15d27', 700:'#ae4a1f' }, ink:'#1c1917' }
+    } }
+  }
+</script>
+<style>
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.show { opacity:1; transform:none; }
+  .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s}
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+  .float { animation: float 6s ease-in-out infinite; }
+  .blob { filter: blur(60px); opacity:.5; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto } .reveal{opacity:1;transform:none;transition:none} .float{animation:none}
+  }
+  input:focus, select:focus, textarea:focus { outline:none; box-shadow:0 0 0 3px rgba(232,116,59,.25); }
+</style>
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+
+<!-- Announcement bar -->
+<div class="bg-ink text-white text-center text-sm py-2 px-4">
+  🎉 Free shipping on orders over $50 · Use code <strong>WELCOME10</strong> for 10% off your first order
+</div>
+
+<!-- Navbar -->
+<header id="nav" class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-stone-200 transition-shadow">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 py-4">
+    <a href="#home" class="font-serif text-2xl font-bold">Lumora<span class="text-brand-500">.</span></a>
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+      <li><a class="hover:text-brand-600 transition" href="#services">Why Lumora</a></li>
+      <li><a class="hover:text-brand-600 transition" href="#testimonials">Reviews</a></li>
+      <li><a class="hover:text-brand-600 transition" href="#booking">Book a Session</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="#booking" class="hidden sm:inline-block bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">Shop Now</a>
+      <button id="menuBtn" class="md:hidden p-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200 bg-white px-5 py-4 space-y-3 text-sm font-medium">
+    <a class="block" href="#services">Why Lumora</a>
+    <a class="block" href="#testimonials">Reviews</a>
+    <a class="block" href="#booking">Book a Session</a>
+  </div>
+</header>
+
+<main>
+<!-- Hero -->
+<section id="home" class="relative overflow-hidden bg-gradient-to-b from-brand-50 to-white">
+  <div class="blob absolute -top-20 -left-20 w-72 h-72 bg-brand-100 rounded-full"></div>
+  <div class="blob absolute bottom-0 right-0 w-80 h-80 bg-amber-100 rounded-full"></div>
+  <div class="relative max-w-7xl mx-auto px-5 py-20 lg:py-28 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <span class="reveal inline-block text-xs font-semibold tracking-widest uppercase text-brand-600 bg-brand-100 px-3 py-1 rounded-full">New Autumn Collection</span>
+      <h1 class="reveal d1 font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mt-5">Everyday things, <span class="text-brand-500">beautifully chosen.</span></h1>
+      <p class="reveal d2 mt-5 text-lg text-stone-600 max-w-xl">Discover handpicked home, style and lifestyle essentials from independent makers, delivered fast and backed by a 30-day happiness guarantee.</p>
+      <div class="reveal d3 mt-8 flex flex-wrap gap-4">
+        <a href="#booking" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg shadow-brand-500/30 transition hover:-translate-y-0.5">Start Shopping</a>
+        <a href="#services" class="border border-stone-300 hover:border-ink font-semibold px-8 py-4 rounded-full transition">How it works</a>
+      </div>
+      <div class="reveal d3 mt-10 flex items-center gap-4">
+        <div class="flex -space-x-2">
+          <span class="w-9 h-9 rounded-full bg-rose-300 border-2 border-white"></span>
+          <span class="w-9 h-9 rounded-full bg-amber-300 border-2 border-white"></span>
+          <span class="w-9 h-9 rounded-full bg-teal-300 border-2 border-white"></span>
+          <span class="w-9 h-9 rounded-full bg-indigo-300 border-2 border-white"></span>
+        </div>
+        <p class="text-sm text-stone-600"><span class="text-amber-500">★★★★★</span> <strong class="text-ink">4.9/5</strong> from 12,000+ happy customers</p>
+      </div>
+    </div>
+    <div class="reveal d2 relative">
+      <div class="float relative rounded-[2rem] bg-gradient-to-br from-brand-500 to-amber-400 aspect-[4/5] max-w-md mx-auto shadow-2xl flex items-center justify-center text-[9rem]">🛍️</div>
+      <div class="absolute -bottom-5 -left-2 sm:left-6 bg-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-3">
+        <span class="text-2xl">🚚</span>
+        <div><p class="text-sm font-semibold">Free 2-day delivery</p><p class="text-xs text-stone-500">On orders over $50</p></div>
+      </div>
+      <div class="absolute top-6 -right-2 sm:right-4 bg-white rounded-2xl shadow-xl px-5 py-3 text-center">
+        <p class="text-2xl font-bold text-brand-600">-30%</p><p class="text-xs text-stone-500">Seasonal sale</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="border-y border-stone-200 bg-white">
+  <div class="max-w-7xl mx-auto px-5 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="reveal"><p class="text-3xl font-bold" data-count="12000" data-suffix="+">0</p><p class="text-sm text-stone-500 mt-1">Happy customers</p></div>
+    <div class="reveal d1"><p class="text-3xl font-bold" data-count="850" data-suffix="+">0</p><p class="text-sm text-stone-500 mt-1">Curated products</p></div>
+    <div class="reveal d2"><p class="text-3xl font-bold" data-count="98" data-suffix="%">0</p><p class="text-sm text-stone-500 mt-1">Satisfaction rate</p></div>
+    <div class="reveal d3"><p class="text-3xl font-bold" data-count="40" data-suffix="+">0</p><p class="text-sm text-stone-500 mt-1">Countries shipped to</p></div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-20 lg:py-28 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="reveal text-sm font-semibold uppercase tracking-widest text-brand-600">Our services</p>
+      <h2 class="reveal d1 font-serif text-3xl sm:text-4xl font-bold mt-3">Shopping that feels effortless</h2>
+      <p class="reveal d2 mt-4 text-stone-600">Every detail, from discovery to your doorstep, is designed to make you smile.</p>
+    </div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="reveal group bg-white rounded-2xl p-8 border border-stone-200 hover:border-brand-500 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center text-2xl group-hover:bg-brand-500 group-hover:scale-110 transition">🚚</div>
+        <h3 class="mt-6 text-lg font-semibold">Fast, free shipping</h3>
+        <p class="mt-2 text-stone-600 text-sm leading-relaxed">Free 2-day delivery on orders over $50, with live tracking from warehouse to your door.</p>
+      </article>
+      <article class="reveal d1 group bg-white rounded-2xl p-8 border border-stone-200 hover:border-brand-500 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center text-2xl group-hover:bg-brand-500 group-hover:scale-110 transition">🎁</div>
+        <h3 class="mt-6 text-lg font-semibold">Gift wrapping &amp; notes</h3>
+        <p class="mt-2 text-stone-600 text-sm leading-relaxed">Premium eco-friendly wrapping with a handwritten message, ready to surprise someone special.</p>
+      </article>
+      <article class="reveal d2 group bg-white rounded-2xl p-8 border border-stone-200 hover:border-brand-500 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center text-2xl group-hover:bg-brand-500 group-hover:scale-110 transition">💬</div>
+        <h3 class="mt-6 text-lg font-semibold">Personal shopping</h3>
+        <p class="mt-2 text-stone-600 text-sm leading-relaxed">Book a free 1-on-1 video session and let our stylists build a basket tailored to you.</p>
+      </article>
+      <article class="reveal group bg-white rounded-2xl p-8 border border-stone-200 hover:border-brand-500 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center text-2xl group-hover:bg-brand-500 group-hover:scale-110 transition">↩️</div>
+        <h3 class="mt-6 text-lg font-semibold">30-day easy returns</h3>
+        <p class="mt-2 text-stone-600 text-sm leading-relaxed">Changed your mind? Return anything within 30 days with a prepaid label. No questions asked.</p>
+      </article>
+      <article class="reveal d1 group bg-white rounded-2xl p-8 border border-stone-200 hover:border-brand-500 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center text-2xl group-hover:bg-brand-500 group-hover:scale-110 transition">🔒</div>
+        <h3 class="mt-6 text-lg font-semibold">Secure checkout</h3>
+        <p class="mt-2 text-stone-600 text-sm leading-relaxed">Encrypted payments with cards, wallets and buy-now-pay-later, so your data stays protected.</p>
+      </article>
+      <article class="reveal d2 group bg-white rounded-2xl p-8 border border-stone-200 hover:border-brand-500 hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <div class="w-14 h-14 rounded-xl bg-brand-100 flex items-center justify-center text-2xl group-hover:bg-brand-500 group-hover:scale-110 transition">🌱</div>
+        <h3 class="mt-6 text-lg font-semibold">Sustainably sourced</h3>
+        <p class="mt-2 text-stone-600 text-sm leading-relaxed">We partner with independent makers and ship in recycled, plastic-free packaging.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="reveal text-sm font-semibold uppercase tracking-widest text-brand-600">Testimonials</p>
+      <h2 class="reveal d1 font-serif text-3xl sm:text-4xl font-bold mt-3">Loved by thousands of shoppers</h2>
+    </div>
+    <div class="mt-14 grid md:grid-cols-3 gap-6">
+      <figure class="reveal bg-stone-50 rounded-2xl p-8 border border-stone-200">
+        <div class="text-amber-500">★★★★★</div>
+        <blockquote class="mt-4 text-stone-700 leading-relaxed">“Everything arrived in two days and the packaging was gorgeous. The quality is far better than I expected for the price.”</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-rose-300 flex items-center justify-center font-semibold">SM</span><div><p class="font-semibold text-sm">Sarah M.</p><p class="text-xs text-stone-500">Verified buyer</p></div></figcaption>
+      </figure>
+      <figure class="reveal d1 bg-ink text-white rounded-2xl p-8 md:-translate-y-4 shadow-xl">
+        <div class="text-amber-400">★★★★★</div>
+        <blockquote class="mt-4 text-stone-200 leading-relaxed">“The personal shopping session was a game changer. My stylist found the perfect gifts for my whole family in 20 minutes.”</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-amber-300 text-ink flex items-center justify-center font-semibold">DK</span><div><p class="font-semibold text-sm">Daniel K.</p><p class="text-xs text-stone-400">Verified buyer</p></div></figcaption>
+      </figure>
+      <figure class="reveal d2 bg-stone-50 rounded-2xl p-8 border border-stone-200">
+        <div class="text-amber-500">★★★★★</div>
+        <blockquote class="mt-4 text-stone-700 leading-relaxed">“I needed to return one item and it took two minutes. Refund landed in days. I will absolutely shop here again.”</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3"><span class="w-11 h-11 rounded-full bg-teal-300 flex items-center justify-center font-semibold">PR</span><div><p class="font-semibold text-sm">Priya R.</p><p class="text-xs text-stone-500">Verified buyer</p></div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Booking -->
+<section id="booking" class="py-20 lg:py-28 bg-gradient-to-br from-brand-600 to-brand-500 text-white">
+  <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <p class="reveal text-sm font-semibold uppercase tracking-widest text-brand-100">Free personal shopping</p>
+      <h2 class="reveal d1 font-serif text-3xl sm:text-4xl font-bold mt-3">Book your 1-on-1 styling session</h2>
+      <p class="reveal d2 mt-4 text-brand-50 max-w-md">Tell us what you’re looking for and a Lumora stylist will curate a personalized basket for you over a relaxed 20-minute video call.</p>
+      <ul class="reveal d3 mt-8 space-y-3 text-brand-50">
+        <li class="flex gap-3"><span>✓</span> 100% free, no obligation to buy</li>
+        <li class="flex gap-3"><span>✓</span> Exclusive 15% off your curated basket</li>
+        <li class="flex gap-3"><span>✓</span> Confirmation within 24 hours</li>
+      </ul>
+    </div>
+    <div class="reveal d2 bg-white text-ink rounded-3xl p-6 sm:p-9 shadow-2xl">
+      <form id="bookingForm" novalidate class="space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="name" class="block text-sm font-medium mb-1.5">Full name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe" class="w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+            <p class="err hidden text-xs text-red-600 mt-1">Please enter your name.</p>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium mb-1.5">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="jane@email.com" class="w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+            <p class="err hidden text-xs text-red-600 mt-1">Enter a valid email address.</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="date" class="block text-sm font-medium mb-1.5">Preferred date</label>
+            <input id="date" name="date" type="date" required class="w-full rounded-xl border border-stone-300 px-4 py-3 text-sm">
+            <p class="err hidden text-xs text-red-600 mt-1">Pick a date from today onward.</p>
+          </div>
+          <div>
+            <label for="time" class="block text-sm font-medium mb-1.5">Time slot</label>
+            <select id="time" name="time" required class="w-full rounded-xl border border-stone-300 px-4 py-3 text-sm bg-white">
+              <option value="">Select a time</option>
+              <option>09:00 – 10:00</option><option>11:00 – 12:00</option><option>14:00 – 15:00</option><option>17:00 – 18:00</option>
+            </select>
+            <p class="err hidden text-xs text-red-600 mt-1">Please choose a time.</p>
+          </div>
+        </div>
+        <div>
+          <label for="interest" class="block text-sm font-medium mb-1.5">I’m shopping for</label>
+          <select id="interest" name="interest" class="w-full rounded-xl border border-stone-300 px-4 py-3 text-sm bg-white">
+            <option>Home &amp; living</option><option>Fashion &amp; accessories</option><option>Gifts</option><option>Beauty &amp; wellness</option>
+          </select>
+        </div>
+        <div>
+          <label for="notes" class="block text-sm font-medium mb-1.5">Anything we should know? <span class="text-stone-400 font-normal">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Budget, style, occasion…" class="w-full rounded-xl border border-stone-300 px-4 py-3 text-sm resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-ink hover:bg-stone-800 text-white font-semibold py-4 rounded-xl transition hover:-translate-y-0.5">Book my free session</button>
+        <p class="text-xs text-stone-500 text-center">We respect your privacy and never share your details.</p>
+      </form>
+      <div id="success" class="hidden text-center py-10">
+        <div class="mx-auto w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-3xl">✓</div>
+        <h3 class="mt-5 text-xl font-semibold">You’re booked!</h3>
+        <p id="successMsg" class="mt-2 text-stone-600 text-sm"></p>
+        <button id="again" class="mt-6 text-brand-600 font-semibold text-sm hover:underline">Book another session</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-ink text-stone-400">
+  <div class="max-w-7xl mx-auto px-5 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="#home" class="font-serif text-2xl font-bold text-white">Lumora<span class="text-brand-500">.</span></a>
+    <p class="text-sm">© <span id="year"></span> Lumora Store. All rights reserved.</p>
+    <div class="flex gap-6 text-sm"><a href="#" class="hover:text-white transition">Privacy</a><a href="#" class="hover:text-white transition">Terms</a><a href="#" class="hover:text-white transition">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // Nav shadow on scroll
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('shadow-md', scrollY > 10), { passive: true });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Count-up stats
+  const counter = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count, suffix = el.dataset.suffix || '', start = performance.now(), dur = 1600;
+      const tick = (now) => {
+        const p = Math.min((now - start) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased).toLocaleString() + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      counter.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(el => counter.observe(el));
+
+  // Booking form
+  const form = document.getElementById('bookingForm'), success = document.getElementById('success');
+  const dateInput = document.getElementById('date');
+  dateInput.min = new Date().toISOString().split('T')[0];
+
+  const rules = {
+    name: v => v.trim().length >= 2,
+    email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+    date: v => v && v >= dateInput.min,
+    time: v => v !== ''
+  };
+  function check(field) {
+    const ok = rules[field.name](field.value);
+    field.classList.toggle('border-red-500', !ok);
+    field.classList.toggle('border-stone-300', ok);
+    field.parentElement.querySelector('.err').classList.toggle('hidden', ok);
+    return ok;
+  }
+  Object.keys(rules).forEach(n => form.elements[n].addEventListener('blur', e => check(e.target)));
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const valid = Object.keys(rules).map(n => check(form.elements[n])).every(Boolean);
+    if (!valid) return;
+    const data = Object.fromEntries(new FormData(form));
+    // TODO: replace with a real endpoint, e.g. fetch('/api/book', { method:'POST', body: JSON.stringify(data) })
+    console.log('Booking submitted:', data);
+    document.getElementById('successMsg').textContent =
+      `Thanks ${data.name.split(' ')[0]}! We’ve reserved ${data.time} on ${data.date}. A confirmation is on its way to ${data.email}.`;
+    form.classList.add('hidden'); success.classList.remove('hidden');
+  });
+  document.getElementById('again').addEventListener('click', () => {
+    form.reset(); form.classList.remove('hidden'); success.classList.add('hidden');
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
